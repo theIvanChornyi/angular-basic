@@ -1,0 +1,19 @@
+.post{
+  margin: 10px auto;
+  padding: 15px;
+  width: 500px;
+  text-align: center;
+  border: 1px dashed grey;
+
+  &__title{
+    margin: 20px 0 0;
+    text-transform:uppercase;
+    color: tomato;
+  }
+
+  &__text{
+    margin:  20px 0 0;
+    text-shadow: 1px 1px 2px grey;
+  }
+}
+
