@@ -6,6 +6,7 @@ import {PostComponent} from "./post/post.component";
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import {TodoHeaderComponent} from "./todo-header/todo-header.component";
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {TodoHeaderComponent} from "./todo-header/todo-header.component";
     TodoHeaderComponent,
     TodoListComponent,
     ListItemComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule
