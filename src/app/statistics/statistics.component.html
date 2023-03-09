@@ -1,0 +1,43 @@
+<div class="statistics">
+  <ul class="statistics__list">
+    <li class="statistics__item">
+      <span class="statistics__label">{{ fieldName.POSITIVE.slice(1) }}</span>
+      <span class="statistics__number">{{ positive }}</span>
+    </li>
+    <li class="statistics__item">
+      <span class="statistics__label">{{ fieldName.NEUTRAL.slice(1) }}</span>
+      <span class="statistics__number">{{ neutral }}</span>
+    </li>
+    <li class="statistics__item">
+      <span class="statistics__label">{{ fieldName.NEGATIVE.slice(1) }}</span>
+      <span class="statistics__number">{{ negative }}</span>
+    </li>
+  </ul>
+  <div class="statistics__controls">
+    <button
+      class="statistics__button"
+      type="button"
+      (click)="onHandleClick(fieldName.POSITIVE)"
+      (mouseout)="onLeave($event)"
+    >
+      <span class="statistics__icon">{{ '👍' }}</span>
+    </button>
+    <button
+      class="statistics__button"
+      type="button"
+      (click)="onHandleClick(fieldName.NEUTRAL)"
+      (mouseout)="onLeave($event)"
+    >
+      <span class="statistics__icon">{{ '🖖' }}</span>
+    </button>
+    <button
+      class="statistics__button"
+      type="button"
+      (click)="onHandleClick(fieldName.NEGATIVE)"
+      (mouseout)="onLeave($event)"
+    >
+      <span class="statistics__icon">{{ '👎' }}</span>
+    </button>
+  </div>
+  <span class="statistics__result">{{ percentage }} %</span>
+</div>
