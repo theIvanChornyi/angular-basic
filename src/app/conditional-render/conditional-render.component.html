@@ -1,0 +1,22 @@
+<button type="button" (click)="toogle = !toogle">Change paragraph</button>
+
+<p *ngIf="toogle; else paraRed" class="green">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, libero.
+</p>
+<ng-template #paraRed>
+  <p class="red">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
+  </p>
+</ng-template>
+
+<div [ngSwitch]="toogle">
+  <p *ngSwitchCase="false" class="green">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, libero.
+  </p>
+  <p *ngSwitchCase="true" class="red">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, libero.
+  </p>
+  <p *ngSwitchDefault>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, libero.
+  </p>
+</div>
