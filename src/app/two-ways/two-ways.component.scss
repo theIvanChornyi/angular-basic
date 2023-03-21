@@ -1,0 +1,29 @@
+.input {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px;
+
+  border: 2px solid grey;
+  border-radius: 5px;
+  font-size: large;
+}
+.paragraph {
+  margin-top: 10px;
+  text-align: center;
+  &_dark {
+    background-color: white;
+  }
+  &_light {
+    background-color: saddlebrown;
+  }
+}
+.button {
+  display: block;
+  margin: 0 auto;
+  &_dark {
+    background-color: darkorchid;
+  }
+  &_light {
+    background-color: aqua;
+  }
+}

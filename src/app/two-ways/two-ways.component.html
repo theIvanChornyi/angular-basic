@@ -1,0 +1,24 @@
+<input
+  class="input"
+  type="text"
+  (input)="onChange()"
+  [(ngModel)]="text"
+  [ngStyle]="{
+    backgroundColor: color
+  }"
+/>
+<p
+  class="paragraph"
+  [ngClass]="{ paragraph_dark: isDark, paragraph_light: !isDark }"
+  [ngStyle]="{color}"
+>
+  {{ text.split('').reverse().join('') }}
+</p>
+<button
+  class="button"
+  [class.button_light]="!isDark"
+  [class.button_dark]="isDark"
+  (click)="isDark = !isDark"
+>
+  Toogle
+</button>

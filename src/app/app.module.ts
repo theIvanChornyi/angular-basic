@@ -8,7 +8,8 @@ import { ListItemComponent } from './list-item/list-item.component';
 import {TodoHeaderComponent} from "./todo-header/todo-header.component";
 import { StatisticsComponent } from './statistics/statistics.component';
 import { LogoComponent } from './logo/logo.component';
-import { TestComponent } from './test/test.component';
+import { TwoWaysComponent } from './two-ways/two-ways.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { TestComponent } from './test/test.component';
     ListItemComponent,
     StatisticsComponent,
     LogoComponent,
-    TestComponent,
+    TwoWaysComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
