@@ -10,6 +10,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { LogoComponent } from './logo/logo.component';
 import { TwoWaysComponent } from './two-ways/two-ways.component';
 import { FormsModule } from '@angular/forms';
+import { ConditionalRenderComponent } from './conditional-render/conditional-render.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     StatisticsComponent,
     LogoComponent,
     TwoWaysComponent,
+    ConditionalRenderComponent,
   ],
   imports: [
     BrowserModule,
