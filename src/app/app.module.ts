@@ -11,6 +11,8 @@ import { LogoComponent } from './logo/logo.component';
 import { TwoWaysComponent } from './two-ways/two-ways.component';
 import { FormsModule } from '@angular/forms';
 import { ConditionalRenderComponent } from './conditional-render/conditional-render.component';
+import { CicleRenderComponent } from './cicle-render/cicle-render.component';
+import { PipeComponentComponent } from './pipe-component/pipe-component.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ConditionalRenderComponent } from './conditional-render/conditional-ren
     LogoComponent,
     TwoWaysComponent,
     ConditionalRenderComponent,
+    CicleRenderComponent,
+    PipeComponentComponent,
   ],
   imports: [
     BrowserModule,

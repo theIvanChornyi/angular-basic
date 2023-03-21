@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let post of posts; let i = index">
+    {{ i }}
+    <h2>{{ post.name }}</h2>
+    <div>
+      <strong>Comments</strong>
+      <ol>
+        <li *ngFor="let comment of post.coments">
+          <span>{{ comment.title }}</span>
+        </li>
+      </ol>
+    </div>
+  </li>
+</ul>
