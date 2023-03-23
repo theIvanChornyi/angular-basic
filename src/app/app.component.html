@@ -10,3 +10,12 @@
 <div class="contaier">
   <p>{{ date | date : 'GGGG dd MMMM YYYY' }}</p>
 </div>
+<div class="contaier">
+  <p>{{ float }}</p>
+  <p>{{ float | currency }}</p>
+  <p>{{ float | percent }}</p>
+</div>
+
+<div class="contaier">
+  <pre>{{ obj | json }}</pre>
+</div>
