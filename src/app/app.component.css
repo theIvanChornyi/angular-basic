@@ -1,0 +1,6 @@
+.contaier{
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 15px;
+  border: medium dashed green;
+}

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pipes';
+  e:number= Math.E
+  constructor() {
+    console.log(this.e)
+  }
 }
