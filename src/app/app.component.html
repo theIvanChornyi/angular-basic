@@ -1,3 +1,4 @@
+<app-filter-list />
 <div class="contaier">
   <p>{{ e | number : '1.0-0' }}</p>
   <p>{{ e | number : '2.0-5' }}</p>
@@ -18,4 +19,14 @@
 
 <div class="contaier">
   <pre>{{ obj | json }}</pre>
+</div>
+
+<div class="contaier">
+  <p>{{ number }}</p>
+  <p>{{ number | mult }}</p>
+  <p>{{ number | mult : 3 }}</p>
+</div>
+
+<div class="contaier">
+  <p>{{ 'longString     11' | exMarks }}</p>
 </div>

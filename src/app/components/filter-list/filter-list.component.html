@@ -1,0 +1,11 @@
+<div>
+  <input type="text" [(ngModel)]="filter" />
+  <button (click)="filterField = FilterNames.TITLE">Title</button>
+  <button (click)="filterField = FilterNames.TEXT">Text</button>
+  <ul>
+    <li *ngFor="let post of posts | filter : filter : filterField">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.text }}</p>
+    </li>
+  </ul>
+</div>

@@ -11,4 +11,5 @@ export class AppComponent {
   date = new Date();
   float = 0.42;
   obj = { a: 2, b: { c: [1, 2, 3, 4], d: 'qwe' } };
+  number = 2;
 }
