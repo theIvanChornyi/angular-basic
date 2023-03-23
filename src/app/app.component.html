@@ -3,3 +3,10 @@
   <p>{{ e | number : '2.0-5' }}</p>
   <p>{{ e | number : '1.0-5' }}</p>
 </div>
+<div class="contaier">
+  <p>{{ string | titlecase }}</p>
+  <p>{{ string | titlecase | slice : 0 : 5 }}</p>
+</div>
+<div class="contaier">
+  <p>{{ date | date : 'GGGG dd MMMM YYYY' }}</p>
+</div>
