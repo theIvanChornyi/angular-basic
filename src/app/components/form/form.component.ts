@@ -25,4 +25,7 @@ export class FormComponent implements OnInit {
       console.log(value);
     }
   }
+  hideTitle(fieldName: string) {
+    this.form.get(fieldName)?.markAsUntouched();
+  }
 }

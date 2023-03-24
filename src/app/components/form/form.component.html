@@ -5,13 +5,50 @@
     <div class="form-control">
       <label>Email</label>
       <input type="text" placeholder="Email" formControlName="email" />
-      <div class="validation"></div>
+      <div
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        class="validation"
+      >
+        <small
+          (click)="hideTitle('email')"
+          *ngIf="form.get('email')?.errors?.['email']"
+          >Use valid email!</small
+        >
+        <small
+          (click)="hideTitle('email')"
+          *ngIf="form.get('email')?.errors?.['required']"
+          >Email field is required!</small
+        >
+      </div>
     </div>
 
     <div class="form-control">
       <label>Пароль</label>
       <input type="password" placeholder="Пароль" formControlName="password" />
-      <div class="validation"></div>
+      <div
+        class="validation"
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+      >
+        <small
+          (click)="hideTitle('password')"
+          *ngIf="form.get('password')?.errors?.['required']"
+          >Password is required field</small
+        >
+        <small
+          (click)="hideTitle('password')"
+          *ngIf="form.get('password')?.errors?.['minlength']"
+          >Password should be longer than
+          {{form.get('password')?.errors?.['minlength'].requiredLength}}
+          symbols</small
+        >
+        <small
+          (click)="hideTitle('password')"
+          *ngIf="form.get('password')?.errors?.['maxlength']"
+          >Password should be shorter than
+          {{form.get('password')?.errors?.['maxlength'].requiredLength}}
+          symbols</small
+        >
+      </div>
     </div>
 
     <div class="card">
