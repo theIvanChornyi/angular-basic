@@ -83,16 +83,35 @@
       </button>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="skills">
       <h2>Ваши навыки</h2>
-      <button type="button" class="btn">Добавить умение</button>
-      <div class="form-control">
-        <label></label>
-        <input type="text" />
+      <button type="button" class="btn" (click)="addSkill()">
+        Добавить умение
+      </button>
+      <div
+        class="form-control"
+        *ngFor="let controll of skills.controls; let i = index"
+      >
+        <label>Skill #{{ i + 1 }}</label>
+        <input type="text" [formControlName]="i" />
+        <button class="btn skill-btn" type="button" (click)="deleteSkill(i)">
+          X
+        </button>
+
+        <div
+          class="validation"
+          *ngIf="skills.controls?.[i]?.invalid && skills.controls?.[i]?.touched"
+        >
+          <small
+            (click)="hideTitle('skills', i.toString())"
+            *ngIf="skills.controls?.[i]?.errors?.['required']"
+            >Skill is required</small
+          >
+        </div>
       </div>
     </div>
 
-    <button [disabled]="form.invalid" type="submit" class="btn">
+    <button class="btn" [disabled]="form.invalid" type="submit">
       Отправить
     </button>
   </form>

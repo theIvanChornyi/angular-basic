@@ -57,14 +57,22 @@ img {
     color: #000;
     cursor: not-allowed;
   }
+  
+  &:hover {
+    opacity: 0.8;
+  }
+
+    &.skill-btn {
+      position: absolute;
+      bottom: calc(5px / 2);
+      right: 0;
+    }
 }
 
-.btn:hover {
-  opacity: 0.8;
-}
 
 .form-control {
   display: block;
+  position: relative;
   margin-top: 0.3rem;
   margin-bottom: .5rem;
 
