@@ -24,4 +24,7 @@ export class FilterListComponent {
     { title: 'Vodka', text: 'Strong alchogol drink' },
     { title: 'Vodka', text: 'Strong alchogol beer' },
   ];
+  addPost() {
+    this.posts.unshift({ title: 'angular', text: 'new angular post' });
+  }
 }

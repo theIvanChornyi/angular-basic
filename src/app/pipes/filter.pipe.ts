@@ -3,6 +3,7 @@ import { FilterNames, IPost } from '../components/filter-list/filter-list.compon
 
 @Pipe({
   name: 'filter',
+  pure: false,
 })
 export class FilterPipe implements PipeTransform {
   transform(value: IPost[], filter: string, filterField: FilterNames): IPost[] {
