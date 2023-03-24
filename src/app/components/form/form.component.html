@@ -5,18 +5,11 @@
     <div class="form-control">
       <label>Email</label>
       <input type="text" placeholder="Email" formControlName="email" />
-      <div
-        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
-        class="validation"
-      >
-        <small
-          (click)="hideTitle('email')"
-          *ngIf="form.get('email')?.errors?.['email']"
+      <div class="validation" *ngIf="email?.invalid && email?.touched">
+        <small (click)="hideTitle('email')" *ngIf="email?.errors?.['email']"
           >Use valid email!</small
         >
-        <small
-          (click)="hideTitle('email')"
-          *ngIf="form.get('email')?.errors?.['required']"
+        <small (click)="hideTitle('email')" *ngIf="email?.errors?.['required']"
           >Email field is required!</small
         >
       </div>
@@ -25,47 +18,64 @@
     <div class="form-control">
       <label>Пароль</label>
       <input type="password" placeholder="Пароль" formControlName="password" />
-      <div
-        class="validation"
-        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
-      >
+      <div class="validation" *ngIf="password?.invalid && password?.touched">
         <small
           (click)="hideTitle('password')"
-          *ngIf="form.get('password')?.errors?.['required']"
+          *ngIf="password?.errors?.['required']"
           >Password is required field</small
         >
         <small
           (click)="hideTitle('password')"
-          *ngIf="form.get('password')?.errors?.['minlength']"
+          *ngIf="password?.errors?.['minlength']"
           >Password should be longer than
-          {{form.get('password')?.errors?.['minlength'].requiredLength}}
+          {{password?.errors?.['minlength'].requiredLength}}
           symbols</small
         >
         <small
           (click)="hideTitle('password')"
-          *ngIf="form.get('password')?.errors?.['maxlength']"
+          *ngIf="password?.errors?.['maxlength']"
           >Password should be shorter than
-          {{form.get('password')?.errors?.['maxlength'].requiredLength}}
+          {{password?.errors?.['maxlength'].requiredLength}}
           symbols</small
         >
       </div>
     </div>
-
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Адрес</h2>
 
       <div class="form-control">
         <label>Страна</label>
 
-        <select>
+        <select formControlName="country">
           <option value="pl">Польша</option>
           <option value="ua">Украина</option>
           <option value="ge">Грузия</option>
         </select>
       </div>
-
       <div class="form-control">
-        <input type="text" />
+        <input type="text" formControlName="city" />
+
+        <div class="validation" *ngIf="city?.invalid && city?.touched">
+          <small
+            (click)="hideTitle('address', 'city')"
+            *ngIf="city?.errors?.['required']"
+            >city is required field</small
+          >
+          <small
+            (click)="hideTitle('address', 'city')"
+            *ngIf="city?.errors?.['minlength']"
+            >city should be longer than
+            {{city?.errors?.['minlength'].requiredLength}}
+            symbols</small
+          >
+          <small
+            (click)="hideTitle('address', 'city')"
+            *ngIf="city?.errors?.['maxlength']"
+            >city should be shorter than
+            {{city?.errors?.['maxlength'].requiredLength}}
+            symbols</small
+          >
+        </div>
       </div>
 
       <button type="button" class="btn">Выбрать столицу</button>
