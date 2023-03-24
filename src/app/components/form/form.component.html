@@ -1,0 +1,48 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="card">
+    <h1>Angular Forms</h1>
+
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" placeholder="Email" formControlName="email" />
+      <div class="validation"></div>
+    </div>
+
+    <div class="form-control">
+      <label>Пароль</label>
+      <input type="password" placeholder="Пароль" formControlName="password" />
+      <div class="validation"></div>
+    </div>
+
+    <div class="card">
+      <h2>Адрес</h2>
+
+      <div class="form-control">
+        <label>Страна</label>
+
+        <select>
+          <option value="pl">Польша</option>
+          <option value="ua">Украина</option>
+          <option value="ge">Грузия</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text" />
+      </div>
+
+      <button type="button" class="btn">Выбрать столицу</button>
+    </div>
+
+    <div class="card">
+      <h2>Ваши навыки</h2>
+      <button type="button" class="btn">Добавить умение</button>
+      <div class="form-control">
+        <label></label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn">Отправить</button>
+  </form>
+</div>
