@@ -77,6 +77,12 @@ img {
 
   input {
     margin-bottom: 0;
+    &.ng-invalid.ng-touched{
+      border: 1px solid red;
+    }
+    &.ng-valid.ng-touched {
+      border: 1px solid lawngreen;
+    }
   }
 
   .validation {
