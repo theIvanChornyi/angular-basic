@@ -8,6 +8,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
   form: FormGroup;
+  capitalMap = {
+    pl: 'Warsaw',
+    ua: 'Kyiv',
+    ge: 'Tbilisi',
+  };
 
   get email() {
     return this.form.get('email');
@@ -53,11 +58,16 @@ export class FormComponent implements OnInit {
   hideTitle(fieldName: string): void;
   hideTitle(groupName: string, fieldName: string): void;
   hideTitle(groupName: string, fieldName?: string) {
-    if (this.hideTitle.length === 1) {
+    if (!fieldName) {
       this.form.get(groupName)?.markAsUntouched();
-    }
-    if (this.hideTitle.length === 2 && fieldName) {
+    } else {
       this.form.get(groupName)?.get(fieldName)?.markAsUntouched();
     }
+  }
+
+  setCapital() {
+    const cityKey = this.country?.value as keyof typeof this.capitalMap;
+    const capital = this.capitalMap[cityKey];
+    this.form.patchValue({ address: { city: capital } });
   }
 }
