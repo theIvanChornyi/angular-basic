@@ -17,6 +17,9 @@
           *ngIf="email?.errors?.['restrictedEmail']"
           >This email is not allow!</small
         >
+        <small (click)="hideTitle('email')" *ngIf="email?.errors?.['uniqEmail']"
+          >This email address is being used!</small
+        >
       </div>
     </div>
 
@@ -116,7 +119,7 @@
       </div>
     </div>
 
-    <button class="btn" [disabled]="form.invalid" type="submit">
+    <button class="btn" [disabled]="form.invalid || form.pending" type="submit">
       Отправить
     </button>
   </form>

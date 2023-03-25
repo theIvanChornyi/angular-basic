@@ -33,11 +33,11 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl('', [
-        Validators.email,
-        Validators.required,
-        MyValidators.restrictedEmails,
-      ]),
+      email: new FormControl(
+        '',
+        [Validators.email, Validators.required, MyValidators.restrictedEmails],
+        [MyValidators.uniqEmail]
+      ),
       password: new FormControl('', [
         Validators.minLength(4),
         Validators.maxLength(12),
