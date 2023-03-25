@@ -12,6 +12,11 @@
         <small (click)="hideTitle('email')" *ngIf="email?.errors?.['required']"
           >Email field is required!</small
         >
+        <small
+          (click)="hideTitle('email')"
+          *ngIf="email?.errors?.['restrictedEmail']"
+          >This email is not allow!</small
+        >
       </div>
     </div>
 

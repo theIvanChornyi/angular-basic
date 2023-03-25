@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { MyValidators } from 'src/app/my.validators';
 
 @Component({
   selector: 'app-form',
@@ -20,7 +21,6 @@ export class FormComponent implements OnInit {
   get password() {
     return this.form.get('password');
   }
-
   get country() {
     return this.form.get('address')?.get('country');
   }
@@ -33,7 +33,11 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.email, Validators.required]),
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required,
+        MyValidators.restrictedEmails,
+      ]),
       password: new FormControl('', [
         Validators.minLength(4),
         Validators.maxLength(12),
