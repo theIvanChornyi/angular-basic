@@ -56,10 +56,10 @@ export class FormComponent implements OnInit {
   }
 
   submit() {
-    console.log('this.form', this.form);
     if (this.form.valid) {
       const { value } = this.form;
       console.log(value);
+      this.form.reset();
     }
   }
 
