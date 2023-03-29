@@ -16,20 +16,10 @@
 			<div *ngIf="todoList.length; else emptyList">
 				<div *ngFor="let todo of todoList" class="card">
 					<p>
-						<span [class.completed]="todo.completed"
-							>{{ todo.title | titlecase }}
-						</span>
+						<span [class.completed]="todo.completed">{{ todo.title | titlecase }} </span>
 						<span>
-							<button class="btn btn-danger" (click)="deleteTodo(todo.id)">
-								Удалить
-							</button>
-							<button
-								class="btn"
-								[disabled]="todo.completed"
-								(click)="compliteTodo(todo.id)"
-							>
-								Завершить
-							</button>
+							<button class="btn btn-danger" (click)="deleteTodo(todo.id)">Удалить</button>
+							<button class="btn" [disabled]="todo.completed" (click)="compliteTodo(todo.id)">Завершить</button>
 						</span>
 					</p>
 				</div>
