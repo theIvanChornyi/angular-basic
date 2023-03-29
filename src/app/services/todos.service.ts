@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { delay, Observable, throwError, catchError } from 'rxjs';
+import {
+	HttpClient,
+	HttpHeaders,
+	HttpParams,
+	HttpEventType,
+} from '@angular/common/http';
+import { delay, tap, Observable, throwError, catchError } from 'rxjs';
 
 export interface ITodo {
 	id?: number;
@@ -44,7 +49,20 @@ export class TodosService {
 			);
 	}
 
-	deleteTodo(id: number): Observable<void> {
-		return this.http.delete<void>(`${this._baseUrl}/${id}`);
+	deleteTodo(id: number): Observable<any> {
+		return this.http
+			.delete<void>(`${this._baseUrl}/${id}`, {
+				observe: 'events',
+			})
+			.pipe(
+				tap(e => {
+					if (e.type === HttpEventType.Sent) {
+						console.log('Sent');
+					}
+					if (e.type === HttpEventType.Response) {
+						console.log('Responce', e);
+					}
+				})
+			);
 	}
 }
