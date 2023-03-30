@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { PostsComponent } from './components/posts/posts.component';
 import {FormsModule} from "@angular/forms";
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
     AboutExtraComponent,
     HomeComponent,
     PostComponent,
-    PostsComponent
+    PostsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
