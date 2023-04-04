@@ -7,6 +7,7 @@ import { PostComponent } from './components/post/post.component';
 import { AboutExtraComponent } from './components/about-extra/about-extra.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { canActivateChildrenGuard, canActivateGuard } from './auth.guard';
+import { PostResolver } from './post.resolver';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
     },
     {
         path: 'posts/:id',
+        resolve: { post: PostResolver },
         component: PostComponent,
         canActivate: [canActivateGuard],
     },
