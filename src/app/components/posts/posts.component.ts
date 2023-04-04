@@ -20,7 +20,7 @@ export class PostsComponent implements OnInit {
         this.route.queryParams.subscribe((params: Params) => {
             this.showIds = !!+params['showIds'];
         });
-        this.route.fragment.subscribe(fragment => console.log(fragment));
+        this.route.fragment.subscribe();
     }
 
     handleShowIds() {
