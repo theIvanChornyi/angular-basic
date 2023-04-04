@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
+=======
+import {Component} from '@angular/core'
+>>>>>>> 2a9dcf7 (initial commit)
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'modules';
 }
+=======
+  constructor() {}
+}
+
+>>>>>>> 2a9dcf7 (initial commit)
