@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
-=======
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 * {
@@ -70,13 +68,13 @@ img {
 .form-control {
   display: block;
   margin-top: 0.3rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 
   label {
     display: block;
     font-weight: bold;
     font-size: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   input {
@@ -120,7 +118,7 @@ textarea {
 }
 
 hr {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .navbar {
@@ -137,7 +135,7 @@ hr {
 
   ul {
     display: flex;
-    
+
     li.active a {
       font-weight: bold;
       color: #333333;
@@ -151,4 +149,3 @@ hr {
     margin: 0 0.25rem;
   }
 }
->>>>>>> 2a9dcf7 (initial commit)
