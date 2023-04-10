@@ -9,7 +9,12 @@ import { ModalComponent } from './components/modal/modal.component';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, ModalComponent, BackdropComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    ModalComponent,
+    BackdropComponent,
+  ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],

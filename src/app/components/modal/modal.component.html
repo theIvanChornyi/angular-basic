@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <h1>Angular dynamic component</h1>
+</nav>
+<div class="container">
+  <div class="card">
+    <h1>{{ 'Some Content' | pageName }}</h1>
+    <app-backdrop
+      *ngIf="modal"
+      title="Works"
+      (handleClose)="modal = false; closeModal()"
+    />
+    <button class="btn" type="button" (click)="modal = true">Show modal</button>
+    <button class="btn" type="button" (click)="showModal()">
+      Show dynamic modal
+    </button>
+  </div>
+</div>
